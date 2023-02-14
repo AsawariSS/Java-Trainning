@@ -1,0 +1,4 @@
+Added another line in git1 file
+Added another line in git1 file for demo
+this is by pulling the file and mergingadding line for stashing.
+adding for stash again
