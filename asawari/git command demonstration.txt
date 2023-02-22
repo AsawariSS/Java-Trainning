@@ -1,0 +1,405 @@
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project (main)
+$ git checkout -b Practice1
+Switched to a new branch 'Practice1'
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project (Practice1)
+$ ls
+module1/
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project (Practice1)
+$ cd module1/
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ ls
+'Git 1.txt'   stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ cat stashdemo.txt
+Added another line in git1 file
+Added another line in git1 file for demo
+this is by pulling the file and merging
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ echo "it is for demo.">>stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ cat stashdemo.txt
+Added another line in git1 file
+Added another line in git1 file for demo
+this is by pulling the file and mergingit is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        stashdemo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git add stashdemo.txt
+warning: in the working copy of 'module1/stashdemo.txt', LF will be replaced by CRLF the next time Git touches it
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git commit -m "adding demo file"
+[Practice1 3e77a3f] adding demo file
+ 1 file changed, 3 insertions(+)
+ create mode 100644 module1/stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git pu
+pull   push
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git push origin practice1
+fatal: practice1 cannot be resolved to branch
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git push
+fatal: The current branch Practice1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Practice1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git push --set-upstream origin Practice1
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 667 bytes | 166.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'Practice1' on GitHub by visiting:
+remote:      https://github.com/AsawariSS/Mejor_Project/pull/new/Practice1
+remote:
+To https://github.com/AsawariSS/Mejor_Project.git
+ * [new branch]      Practice1 -> Practice1
+branch 'Practice1' set up to track 'origin/Practice1'.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+nothing to commit, working tree clean
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ echo "it is for demo.">>stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff
+warning: in the working copy of 'module1/stashdemo.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/module1/stashdemo.txt b/module1/stashdemo.txt
+index 7aa5c13..055c367 100644
+--- a/module1/stashdemo.txt
++++ b/module1/stashdemo.txt
+@@ -1,3 +1,4 @@
+ Added another line in git1 file
+ Added another line in git1 file for demo
+ this is by pulling the file and mergingit is for demo.
++it is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git add --u
+warning: in the working copy of 'module1/stashdemo.txt', LF will be replaced by CRLF the next time Git touches it
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git add -u
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   stashdemo.txt
+
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff --cached
+diff --git a/module1/stashdemo.txt b/module1/stashdemo.txt
+index 7aa5c13..055c367 100644
+--- a/module1/stashdemo.txt
++++ b/module1/stashdemo.txt
+@@ -1,3 +1,4 @@
+ Added another line in git1 file
+ Added another line in git1 file for demo
+ this is by pulling the file and mergingit is for demo.
++it is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff --staged
+diff --git a/module1/stashdemo.txt b/module1/stashdemo.txt
+index 7aa5c13..055c367 100644
+--- a/module1/stashdemo.txt
++++ b/module1/stashdemo.txt
+@@ -1,3 +1,4 @@
+ Added another line in git1 file
+ Added another line in git1 file for demo
+ this is by pulling the file and mergingit is for demo.
++it is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git res
+reset     restore
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git res
+reset     restore
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git reset
+Unstaged changes after reset:
+M       module1/stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash
+warning: in the working copy of 'module1/stashdemo.txt', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+nothing to commit, working tree clean
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+stash@{0}: WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  apply
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+stash@{0}: WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  pop
+error: Your local changes to the following files would be overwritten by merge:
+        module1/stashdemo.txt
+Please commit your changes or stash them before you merge.
+Aborting
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The stash entry is kept in case you need it again.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+stash@{0}: WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git checkout .
+Updated 1 path from the index
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  pop
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (3261c3cc2d50bf892bc97bf8cbe95549d4e647b5)
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash
+Saved working directory and index state WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  apply
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+stash@{0}: WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  drop
+Dropped refs/stash@{0} (fbce4e8a9f714b282b69c905c1bfc31256e68c89)
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash
+Saved working directory and index state WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ echo "it is demo1">>stashdemo.txt
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash
+warning: in the working copy of 'module1/stashdemo.txt', LF will be replaced by CRLF the next time Git touches it
+Saved working directory and index state WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  list
+stash@{0}: WIP on Practice1: 3e77a3f adding demo file
+stash@{1}: WIP on Practice1: 3e77a3f adding demo file
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git stash  apply --index stash@{1}
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff
+diff --git a/module1/stashdemo.txt b/module1/stashdemo.txt
+index 7aa5c13..055c367 100644
+--- a/module1/stashdemo.txt
++++ b/module1/stashdemo.txt
+@@ -1,3 +1,4 @@
+ Added another line in git1 file
+ Added another line in git1 file for demo
+ this is by pulling the file and mergingit is for demo.
++it is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git diff > change.patch
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ cat change.patch
+diff --git a/module1/stashdemo.txt b/module1/stashdemo.txt
+index 7aa5c13..055c367 100644
+--- a/module1/stashdemo.txt
++++ b/module1/stashdemo.txt
+@@ -1,3 +1,4 @@
+ Added another line in git1 file
+ Added another line in git1 file for demo
+ this is by pulling the file and mergingit is for demo.
++it is for demo.
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git checkout .
+Updated 1 path from the index
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        change.patch
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git apply change.patch
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$ git status
+On branch Practice1
+Your branch is up to date with 'origin/Practice1'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   stashdemo.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        change.patch
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+asawaris@Asawaris-PC MINGW64 /d/GitHub/Mejor_Project/module1 (Practice1)
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
