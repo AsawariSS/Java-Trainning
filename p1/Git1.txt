@@ -1,4 +1,8 @@
 This is demo for Git
 Added another line in git1 file
 Added another line in git1 file for demo
+<<<<<<< HEAD
 this is by pulling the file and merging
+=======
+this is by pulling the file
+>>>>>>> 5adfe4f2512ab7a70bdefc95bc24273d1674c86e
